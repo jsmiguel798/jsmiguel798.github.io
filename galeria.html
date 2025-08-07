@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta charset="UTF-8">
+    
+    <!-- Torna a página responsiva em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece na aba do navegador -->
+    <title>Galeria</title>
+
+    <!-- Ícone do site-->
+    <link rel="website icon" type="jpg"
+    href="https://static.vecteezy.com/ti/vetor-gratis/p1/3229940-rasta-reggae-maconha-bandeira-simbolo-plano-gradiente-cor-gratis-vetor.jpg">
+</head>
+
+<body>
+    <!-- Estilo interno da página -->
+    <style>
+        /* ===== RESET GERAL ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* ===== ESTILO GLOBAL DO BODY ===== */
+        body {
+            background-color: #262626; 
+            color: #333; 
+            line-height: 1.6; 
+            min-height: 100vh; 
+            display: flex;
+            flex-direction: column; 
+        }
+
+        /* ===== CABEÇALHO ===== */
+        header {
+            background-color: #0e4525; 
+            color: #F1C40F; 
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Logo com nome do artista */
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #F1C40F;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* ===== MENU DE NAVEGAÇÃO ===== */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            background-color: #00743070;
+            padding: 10px 0;
+        }
+
+        /* Estilo dos links do menu */
+        .nav-menu a {
+            color: #F1C40F;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        /* Quando o mouse passa sobre o link ou está ativo */
+        .nav-menu a:hover, .nav-menu a.active {
+            background-color: #E74C3C; 
+            color: white;
+        }
+
+        /* ===== RODAPÉ ===== */
+        footer {
+            background-color: #0e4525;
+            color: #F1C40F;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        /* Links das redes sociais */
+        .social-links {
+            margin-bottom: 40px;
+        }
+
+        .social-links a {
+            color: #F1C40F;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        /* Efeito ao passar o mouse nos links sociais */
+        .social-links a:hover, .social-links :active {
+            color: #e4e73c;
+            background-color: #E74C3C;
+        }
+
+        /* ===== GALERIA DE FOTOS ===== */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* layout responsivo */
+            gap: 20px;
+        }
+
+        /* Cada item da galeria */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 300px;
+        }
+
+        /* Imagem dentro da galeria */
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* cobre toda a área mantendo proporção */
+            transition: transform 0.5s;
+        }
+
+        /* Efeito de zoom quando passa o mouse */
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Legenda da imagem */
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7); /* fundo preto translúcido */
+            color: white;
+            padding: 15px;
+            transform: translateY(100%); /* escondido fora da área visível */
+            transition: transform 0.3s;
+        }
+
+        /* Mostra a legenda ao passar o mouse */
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0); /* legenda sobe */
+        }
+
+        /* Título da seção */
+        .page h1 {
+            color: #F1C40F;
+        }
+
+        /* Container da página principal */
+        .page {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            flex: 1;
+        }
+
+    </style>
+</body>
+
+<!-- ===== CABEÇALHO COM LOGO E MENU ===== -->
+<header>
+    <div class="logo">EDSON GOMES</div>
+
+    <div class="nav-menu">
+        <a href="index.html" class="nav-link" data-page="inicio">Início</a>
+        <a href="discografia.html" class="nav-link" data-page="discografia">Discografia</a>
+        <a href="galeria.html" class="nav-link active" data-page="galeria">Galeria</a>
+    </div>
+</header>
+
+<!-- ===== CONTEÚDO PRINCIPAL: GALERIA ===== -->
+<div class="page" id="galeria">
+    <h1>Galeria de Fotos</h1>
+    
+    <div class="gallery">
+        <!-- Cada bloco é uma imagem da galeria -->
+        <div class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKyKyyivdkT3YSJ2mxn41JsmfK2jFG3H0ijw&s"
+                alt="Edson Gomes em foto com a banda cão de raça" />
+            <div class="gallery-caption">Edson Gomes e banda cão de raça</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://api.metro1.com.br/noticias/164059,edson-gomes-fara-show-no-circo-voador-no-rio-de-janeiro-pela-primeira-vez-3.jpg"
+                alt="Edson Gomes em luau" />
+            <div class="gallery-caption">Edson Gomes se apresentando em luau em Manguinho, na Serra</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://static.wixstatic.com/media/c16353_453fbc1ee22d4a35947ba6ae58afbc4e~mv2.png/v1/fill/w_635,h_472,al_c/c16353_453fbc1ee22d4a35947ba6ae58afbc4e~mv2.png"
+                alt="Edson Gomes e Attooxxá" />
+            <div class="gallery-caption">Edson Gomes e Banda Àttooxxá</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://diariocapixaba.com.br/wp-content/uploads/sites/17/2023/11/WhatsApp-Image-2023-11-29-at-13.33.44.jpeg"
+                alt="" />
+            <div class="gallery-caption">O rei do reggae brasileiro</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://i0.wp.com/fiquesabendope.com/wp-content/uploads/2024/10/Foto-divulgacao_20241028_120250_0000.jpg?resize=930%2C620&ssl=1"
+                alt="Edson Gomes em Caruaru" />
+            <div class="gallery-caption">Edson Gomes em Caruaru em turnê comemorativa em evento dedicado ao reggae</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://infonet.com.br/wp-content/uploads/2025/04/edsongomes_fotoinsta.jpg"
+                alt="Edson Gomes em Aracaju" />
+            <div class="gallery-caption">Edson Gomes em show especial em Aracaju</div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== RODAPÉ COM REDES SOCIAIS ===== -->
+<footer>
+    <div class="social-links">
+        <a href="https://www.instagram.com/edsongomesreal/">Instagram</a>
+        <a href="http://www.youtube.com/@EdsonGomes">YouTube</a>
+        <a href="https://open.spotify.com/intl-pt/artist/4kFDUmta3ihdpLBVLh1Vhw?si=rOOSdXgOQxS4udgTCPNkGA">Spotify</a>
+    </div>
+    <p>Desenvolvido por: José Miguel, Michelly Silva e Maria Eduarda</p>
+</footer>
+
+</html>
