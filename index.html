@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags essenciais para configuração da página -->
+    <meta charset="UTF-8"> <!-- Define codificação de caracteres UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade mobile -->
+    <title>Edson Gomes</title> <!-- Título da página exibido na aba do navegador -->
+    <link rel="website icon" type="jpg"
+    href="https://static.vecteezy.com/ti/vetor-gratis/p1/3229940-rasta-reggae-maconha-bandeira-simbolo-plano-gradiente-cor-gratis-vetor.jpg">
+</head>
+
+<style>
+    /* RESET CSS - Remove margens e paddings padrão do navegador */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte padrão */
+    }
+
+    /* CONFIGURAÇÃO GLOBAL DO BODY */
+    body {
+        background-color: #262626; /* Fundo cinza escuro */
+        color: #333; /* Cor do texto padrão */
+        line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
+        min-height: 100vh; /* Altura mínima de 100% da viewport */
+        display: flex; /* Layout flexbox */
+        flex-direction: column; /* Organiza elementos em coluna vertical */
+    }
+
+    /* ===== SEÇÃO DO CABEÇALHO ===== */
+    header {
+        background-color: #0e4525; /* Verde escuro - cores do reggae */
+        color: #F1C40F; /* Amarelo dourado */
+        padding: 20px 0; /* Espaçamento interno vertical */
+        text-align: center; /* Centraliza o conteúdo */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar profundidade */
+    
+    }
+
+    /* LOGOTIPO/NOME DO ARTISTA */
+    .logo {
+        font-size: 2.5rem; /* Tamanho grande para destaque */
+        font-weight: bold; /* Texto em negrito */
+        margin-bottom: 10px; /* Espaço abaixo do logo */
+        color: #F1C40F;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra no texto para contraste */
+    }
+
+    /* MENU DE NAVEGAÇÃO */
+    .nav-menu {
+        display: flex; /* Layout horizontal flexível */
+        justify-content: center; /* Centraliza os itens do menu */
+        background-color: #00743070; /* Verde semi-transparente */
+        padding: 10px 0; /* Espaçamento vertical */
+    }
+
+    /* LINKS DO MENU */
+    .nav-menu a {
+        color: #F1C40F; /* Amarelo dourado */
+        text-decoration: none; /* Remove sublinhado padrão */
+        padding: 10px 20px; /* Espaçamento interno dos botões */
+        margin: 0 5px; /* Espaço entre os botões */
+        border-radius: 5px; /* Bordas arredondadas */
+        transition: all 0.3s; /* Animação suave nas mudanças */
+        font-weight: bold; /* Texto em negrito */
+    }
+
+    /* EFEITOS HOVER E ITEM ATIVO DO MENU */
+    .nav-menu a:hover,
+    .nav-menu a.active {
+        background-color: #E74C3C; /* Vermelho quando ativo/hover */
+        color: white; /* Texto branco para contraste */
+    }
+
+    /* ===== CONTAINER PRINCIPAL ===== */
+    .container {
+        max-width: 1200px; /* Largura máxima para não ficar muito largo em telas grandes */
+        margin: 30px auto; /* Centraliza horizontalmente com margem superior */
+        padding: 0 20px; /* Espaçamento interno lateral */
+        flex: 1; /* Ocupa todo espaço disponível - empurra footer para baixo */
+        width: 100%; /* Garante que ocupe toda a largura em telas menores */
+    }
+
+    /* CONFIGURAÇÃO DAS PÁGINAS (SISTEMA SPA) */
+    .page {
+        display: none; /* Por padrão todas as páginas ficam ocultas */
+        color: aliceblue; /* Cor do texto das páginas */
+    }
+
+    /* PÁGINA ATIVA VISÍVEL */
+    .page.active {
+        display: block; /* Mostra apenas a página ativa */
+    }
+
+    /* ===== SEÇÃO HERO DA PÁGINA INICIAL ===== */
+    .hero {
+        display: flex; /* Layout flexível */
+        flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+        gap: 30px; /* Espaço entre os elementos */
+        margin-bottom: 40px; /* Espaço abaixo da seção hero */
+        align-items: center; /* Alinha verticalmente ao centro */
+        text-align: justify; /* Justifica o texto */
+        color: aliceblue; /* Cor do texto */
+    }
+
+    /* CONTAINER DA IMAGEM PRINCIPAL */
+    .hero-image {
+        flex: 1; /* Ocupa metade do espaço disponível */
+        min-width: 300px; /* Largura mínima para responsividade */
+    }
+
+    /* IMAGEM PRINCIPAL DO ARTISTA */
+    .hero-image img {
+        width: 100%; /* Ocupa toda largura do container */
+        border-radius: 10px; /* Bordas arredondadas */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+    }
+
+    /* CONTAINER DO TEXTO PRINCIPAL */
+    .hero-text {
+        flex: 1; /* Ocupa metade do espaço disponível */
+        min-width: 300px; /* Largura mínima para responsividade */
+    }
+
+    /* TÍTULO PRINCIPAL DA PÁGINA */
+    .hero-text h1 {
+        font-size: 2.2rem; /* Tamanho grande para destaque */
+        margin-bottom: 20px; /* Espaço abaixo do título */
+        color: #F1C40F; /* Amarelo dourado para destaque */
+    }
+
+    /* PARÁGRAFOS DO TEXTO PRINCIPAL */
+    .hero-text p {
+        margin-bottom: 15px; /* Espaço entre parágrafos */
+    }
+
+    /* ===== SEÇÃO DO RODAPÉ ===== */
+    footer {
+        background-color: #0e4525; /* Mesmo verde do header para consistência */
+        color: #F1C40F; /* Amarelo dourado */
+        text-align: center; /* Centraliza todo conteúdo */
+        padding: 30px 20px; /* Espaçamento interno generoso */
+        margin-top: auto; /* IMPORTANTE: empurra footer para o final da página */
+        width: 100%; /* Ocupa toda largura disponível */
+    }
+
+    /* CONTAINER DOS LINKS SOCIAIS */
+    .social-links {
+        margin-bottom: 20px; /* Espaço entre links e texto de créditos */
+    }
+
+    /* LINKS DAS REDES SOCIAIS */
+    .social-links a {
+        color: #F1C40F; /* Amarelo dourado */
+        text-decoration: none; /* Remove sublinhado */
+        padding: 10px 20px; /* Espaçamento interno dos botões */
+        margin: 0 5px; /* Espaço entre os botões */
+        border-radius: 20px; /* Bordas bem arredondadas */
+        font-weight: bold; /* Texto em negrito */
+        transition: all 0.3s; /* Animação suave */
+        display: inline-block; /* Permite transformações */
+    }
+
+    /* EFEITO HOVER NOS LINKS SOCIAIS */
+    .social-links a:hover {
+        color: white; /* Texto branco */
+        background-color: #E74C3C; /* Fundo vermelho */
+        transform: translateY(-2px); /* Move ligeiramente para cima */
+    }
+
+    /* TEXTO DE CRÉDITOS/DESENVOLVIMENTO */
+    footer p {
+        color: #F1C40F; /* Amarelo dourado */
+        font-size: 0.9rem; /* Tamanho menor */
+    }
+
+    /* ===== RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS ===== */
+    @media (max-width: 768px) {
+        /* Ajusta tamanho do logo em telas menores */
+        .logo {
+            font-size: 2rem; /* Reduz de 2.5rem para 2rem */
+        }
+
+        /* MENU VERTICAL EM DISPOSITIVOS MÓVEIS */
+        .nav-menu {
+            flex-direction: column; /* Muda de horizontal para vertical */
+            gap: 5px; /* Pequeno espaço entre itens */
+        }
+
+        /* Links do menu em telas pequenas */
+        .nav-menu a {
+            margin: 2px 0; /* Espaçamento vertical entre botões */
+        }
+
+        /* HERO SECTION RESPONSIVA */
+        .hero {
+            flex-direction: column; /* Empilha imagem e texto verticalmente */
+            text-align: center; /* Centraliza o conteúdo */
+        }
+
+        /* Ajusta título em mobile */
+        .hero-text h1 {
+            font-size: 1.8rem; /* Reduz tamanho do título */
+        }
+
+        /* LINKS SOCIAIS EMPILHADOS EM MOBILE */
+        .social-links a {
+            display: block; /* Cada link em uma linha */
+            margin: 5px auto; /* Centraliza e adiciona espaço vertical */
+            max-width: 200px; /* Largura máxima para não ficar muito largo */
+        }
+    }
+</style>
+
+<body>
+    <!-- ===== CABEÇALHO DA PÁGINA ===== -->
+    <header>
+        <!-- Logo/Nome do artista -->
+        <div class="logo">EDSON GOMES</div>
+        
+        <!-- Menu de navegação -->
+        <div class="nav-menu">
+            <a href="TelaInicial.html" class="nav-link active" data-page="inicio">Início</a>
+            <a href="Discografia.html" class="nav-link" data-page="discografia">Discografia</a>
+            <a href="Galeria.html" class="nav-link" data-page="galeria">Galeria</a>
+        </div>
+    </header>
+
+    <!--CONTAINER PRINCIPAL-->
+    <div class="container">
+        <!-- Página inicial -->
+        <div class="page active" id="inicio">
+            <!-- Seção Hero com imagem e texto -->
+            <div class="hero">
+                <!-- Container da imagem principal -->
+                <div class="hero-image">
+                    <img src="https://s2-g1.glbimg.com/embjVkZGXUSCnxtbFzAhU1Of56c=/0x53:827x688/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2022/K/R/sAB6YGR167blVyMts6Fg/597bd669-571a-42f7-93fc-ee38a935c586.jpeg" 
+                         alt="Foto de Edson Gomes" />
+                </div>
+
+                <!-- Container do texto principal -->
+                <div class="hero-text">
+                    <h1>Edson Gomes: A Voz do Reggae</h1>
+                    <p>Edson Gomes é um cantor, compositor de reggae brasileiro. Ele é amplamente considerado como o
+                        maior nome da história da música reggae no país. Suas músicas falam sobre desigualdade social,
+                        violência, pobreza, mazelas, corrupção e do cotidiano brasileiro. A primeira grande influência
+                        musical de Edson Gomes foi Tim Maia, ele gostava tanto de imitar o Tim Maia que acabou ficando
+                        conhecido na cidade como "Tim Maia de Cachoeira".</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== RODAPÉ DA PÁGINA ===== -->
+    <footer>
+        <!-- Links para redes sociais -->
+        <div class="social-links">
+            <a href="https://www.instagram.com/edsongomesreal/">Instagram</a>
+            <a href="http://www.youtube.com/@EdsonGomes">YouTube</a>
+            <a href="https://open.spotify.com/intl-pt/artist/4kFDUmta3ihdpLBVLh1Vhw?si=rOOSdXgOQxS4udgTCPNkGA">Spotify</a>
+        </div>
+        <!-- Créditos de desenvolvimento -->
+        <p>Desenvolvido por: José Miguel, Michelly Silva e Maria Eduarda</p>
+    </footer>
+</body>
+
+</html>
