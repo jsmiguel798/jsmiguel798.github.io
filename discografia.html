@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discografia</title>
+    <!-- Ícone da página usando uma imagem externa -->
+    <link rel="website icon" type="jpg"
+        href="https://static.vecteezy.com/ti/vetor-gratis/p1/3229940-rasta-reggae-maconha-bandeira-simbolo-plano-gradiente-cor-gratis-vetor.jpg">
+</head>
+
+<style>
+   /* RESET CSS - Remove margens e paddings padrão do navegador */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte padrão */
+    }
+    
+
+    /* Estilo do corpo da página */
+    body {
+        background-color: #262626;
+        /* Fundo escuro (cinza) */
+        color: #333;
+        /* Cor do texto padrão */
+        line-height: 1.6;
+        /* Espaçamento entre linhas */
+        min-height: 100vh;
+        /* Altura mínima de 100% da viewport */
+        display: flex;
+        /* Layout flexbox */
+        flex-direction: column;
+        /* Disposição vertical */
+    }
+
+/* ===== CABEÇALHO ===== */
+        header {
+            background-color: #0e4525; /* verde escuro */
+            color: #F1C40F; /* amarelo */
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Logo com nome do artista */
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #F1C40F;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* sombra para destaque */
+        }
+
+        /* ===== MENU DE NAVEGAÇÃO ===== */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            background-color: #00743070; /* verde semi-transparente */
+            padding: 10px 0;
+        }
+
+    /* Links do menu */
+    .nav-menu a {
+        color: #F1C40F;
+        /* Amarelo dourado */
+        text-decoration: none;
+        /* Remove sublinhado */
+        padding: 10px 20px;
+        margin: 0 5px;
+        border-radius: 5px;
+        /* Bordas arredondadas */
+        transition: all 0.3s;
+        /* Transição suave */
+        font-weight: bold;
+    }
+
+    /* Efeito hover e link ativo */
+    .nav-menu a:hover,
+    .nav-menu a.active {
+        background-color: #E74C3C;
+        /* Vermelho */
+        color: white;
+    }
+
+    /* Container principal do conteúdo */
+    .page {
+        max-width: 1200px;
+        /* Largura máxima */
+        margin: auto;
+        /* Centraliza horizontalmente */
+        padding: 20px;
+        flex: 1;
+        /* Ocupa o espaço disponível (empurra o footer para baixo) */
+    }
+
+    /* Título principal da página */
+    .page h1 {
+        color: #F1C40F;
+        /* Amarelo dourado */
+        margin-bottom: 30px;
+    }
+
+    /*discografia */
+    .discography {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        /* Grid responsivo */
+        gap: 30px;
+        /* Espaçamento entre itens */
+        margin-bottom: 50px;
+    }
+
+    /* Card de cada álbum */
+    .album {
+        background: white;
+        border-radius: 10px;
+        /* Bordas arredondadas */
+        overflow: hidden;
+        /* Esconde conteúdo que ultrapassa as bordas */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        /* Sombra */
+        transition: transform 0.3s;
+        /* Transição para o efeito hover */
+    }
+
+    /* Efeito hover no card do álbum */
+    .album:hover {
+        transform: translateY(-10px);
+        /* Move para cima */
+    }
+
+    /* Container da imagem do álbum */
+    .album-image {
+        height: 250px;
+        /* Altura fixa */
+        overflow: hidden;
+        /* Esconde partes da imagem que ultrapassam */
+    }
+
+    /* Estilo da imagem */
+    .album-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Mantém proporção e preenche o container */
+        transition: transform 0.3s;
+        /* Transição para zoom */
+    }
+
+    /* Efeito zoom na imagem */
+    .album-image:hover img {
+        transform: scale(1.05);
+        /* Aumenta ligeiramente */
+    }
+
+    /* Informações do álbum */
+    .album-info {
+        padding: 20px;
+    }
+
+    /* Título do álbum */
+    .album-info h3 {
+        margin-bottom: 10px;
+        color: #e74c3c;
+        /* Vermelho */
+    }
+
+    /* Descrição do álbum */
+    .album-info p {
+        font-size: 0.9rem;
+        /* Fonte menor */
+        color: #666;
+        /* Cinza */
+        text-align: justify;
+        /* Texto justificado */
+    }
+
+    /* Estilo do rodapé */
+    footer {
+        background-color: #0e4525;
+        /* Verde escuro (mesmo do header) */
+        color: #F1C40F;
+        /* Amarelo dourado */
+        text-align: center;
+        padding: 30px 0;
+        margin-top: 50px;
+    }
+
+    /* Links das redes sociais */
+    .social-links {
+        margin-bottom: 40px;
+    }
+
+    .social-links a {
+        color: #F1C40F;
+        /* Amarelo dourado */
+        text-decoration: none;
+        padding: 10px 20px;
+        margin: 0 5px;
+        border-radius: 20px;
+        /* Bordas bem arredondadas */
+        font-weight: bold;
+        transition: all 0.3s;
+    }
+
+    /* Efeito hover nos links sociais */
+    .social-links a:hover,
+    .social-links :active {
+        color: #e4e73c;
+        /* Amarelo mais claro */
+        transition: all 0.3s;
+        background-color: #E74C3C;
+        /* Fundo vermelho */
+    }
+
+    /* Texto do rodapé */
+    footer p {
+        color: #F1C40F;
+        font-size: 0.9rem;
+    }
+
+
+    .nav-menu a {
+        color: #F1C40F;
+        text-decoration: none;
+        padding: 10px 20px;
+        margin: 0 5px;
+        border-radius: 5px;
+        transition: all 0.3s;
+        font-weight: bold;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+        background-color: #E74C3C;
+        color: white;
+    }
+
+    /* Ajuste responsivo para telas menores */
+    .discography {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        /* Itens menores */
+        gap: 20px;
+        /* Menos espaçamento */
+    }
+</style>
+
+<body>
+    <!-- Cabeçalho da página -->
+    <header>
+        <div class="logo">EDSON GOMES</div>
+
+        <!-- Menu de navegação -->
+        <div class="nav-menu">
+            <a href="index.html" class="nav-link" data-page="inicio">Início</a>
+            <a href="discografia.html" class="nav-link active" data-page="discografia">Discografia</a>
+            <a href="galeria.html" class="nav-link" data-page="galeria">Galeria</a>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <div class="page" id="discografia">
+        <h1>Discografia</h1>
+
+        <!-- Grid com os álbuns -->
+        <div class="discography">
+            <!-- Álbum 1: Reggae Resistência -->
+            <div class="album">
+                <div class="album-image">
+                    <!-- Link para o Spotify -->
+                    <a href="https://open.spotify.com/intl-pt/album/6q5qwTLixwiStRnXXydaLS?si=RqMATkcvR1OWh93h3Tlj6Q"
+                        target="_blank">
+                        <img src="https://cdn-images.dzcdn.net/images/cover/b459ea79bc61a06ddc46616ec248d514/0x1900-000000-80-0-0.jpg"
+                            alt="Capa do álbum reggae resistência" />
+                    </a>
+                </div>
+                <div class="album-info">
+                    <h3>Reggae Resistência (1988)</h3>
+                    <p>Álbum de estreia de Edson Gomes, lançado em 1988, e que é considerado um marco na história do
+                        reggae brasileiro, especialmente por sua abordagem de temas sociais e políticos. Algumas das
+                        faixas mais conhecidas do álbum incluem "Malandrinha", "Samarina" e "Sistema do Vampiro",
+                        que se tornaram clássicos do reggae nacional e contribuíram para a popularização do gênero
+                        no Brasil.</p>
+                </div>
+            </div>
+
+            <!-- Álbum 2: Recôncavo -->
+            <div class="album">
+                <div class="album-image">
+                    <a href="https://open.spotify.com/album/0ceMp5xIR8OaC6c4O1QYOS?si=8Ki6iVavTIeLU-_gzUKnBw"
+                        target="_blank">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR11MFh2N2LRgnVw-oCw2w6YSz5HRhi8IuLow&s"
+                            alt="Capa do álbum 'Recôncavo' de Edson Gomes" />
+                    </a>
+                </div>
+                <div class="album-info">
+                    <h3>Recôncavo (1990)</h3>
+                    <p>O álbum consolida Edson como representante do roots reggae engajado no Brasil, com letras que
+                        abordam temas sociais, de luta e identidade brasileira, inspirado por artistas como Bob Marley e
+                        Jimmy Cliff "Recôncavo", faixa-título, traz uma letra forte de reflexão sobre libertação e apoio
+                        à causa africana, mencionando Mandela e o fim do apartheid.</p>
+                </div>
+            </div>
+
+            <!-- Álbum 3: Campo de Batalha -->
+            <div class="album">
+                <div class="album-image">
+                    <a href="https://open.spotify.com/album/0ceMp5xIR8OaC6c4O1QYOS?si=8Ki6iVavTIeLU-_gzUKnBw"
+                        target="_blank">
+                        <img src="https://cdn-images.dzcdn.net/images/cover/eca8f8a3914d15e84a972c9f647225ab/500x500.jpg"
+                            alt="Capa do álbum campo de batalha" />
+                    </a>
+                </div>
+                <div class="album-info">
+                    <h3>Campo de batalha (1992)</h3>
+                    <p>Este foi o terceiro álbum de estúdio de Edson Gomes e ajudou a expandir sua influência
+                        inicialmente no Nordeste, depois para o Brasil inteiro, Edson mesmo criticou o resultado final
+                        da produção, afirmando que as músicas saíram um pouco "arrastadas" e mais lentas do que ele
+                        gostaria. Ainda assim, o álbum foi um sucesso massivo nas rádios da época Sesc São Paulo
+                        Músicas como "Criminalidade", "Árvore", "Campo de Batalha", "Somos Nós" e "Ovelha" tocaram
+                        intensamente nas rádios e se tornaram hits instantâneos Songtell.</p>
+                </div>
+            </div>
+
+            <!-- Álbum 4: Resgate Fatal -->
+            <div class="album">
+                <div class="album-image">
+                    <a href="https://open.spotify.com/album/1RI1ZCns7E0c8imF35BMQc?si=agkx_k4DTsa2bfQHAAPw_Q"
+                        target="_blank">
+                        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/29/04/97/2904972a-effb-25ff-9932-be067522b36f/21UMGIM09300.rgb.jpg/600x600bf-60.jpg"
+                            alt="Capa do álbum resgate fatal de Edson Gomes" />
+                    </a>
+                </div>
+                <div class="album-info">
+                    <h3>Resgate fatal (1995)</h3>
+                    <p>O disco consolidou Edson como um dos nomes mais fortes do reggae brasileiro na década de 1990,
+                        especialmente pelo êxito da faixa "Isaac", tocada intensamente em rádios e shows de todo o país.
+                        As letras mantêm o forte viés social e engajado presente em sua trajetória, discutindo questões
+                        de justiça, desigualdade e resistência, alinhando-se à tradição do roots reggae. Este foi seu
+                        último álbum pela EMI, que posteriormente lançou coletâneas como Meus Momentos I e II, trazendo
+                        seus maiores sucessos da fase com a gravadora.</p>
+                </div>
+            </div>
+
+            <!-- Álbum 5: Apocalipse -->
+            <div class="album">
+                <div class="album-image">
+                    <a href="https://open.spotify.com/album/1b3wzLI25HMGfKWkljhCce?si=nF0p9qVASj2dWYq6G1yBcw"
+                        target="_blank">
+                        <img src="https://cdn-images.dzcdn.net/images/cover/a19eccee2192f975263fe6b0d0012a81/0x1900-000000-80-0-0.jpg"
+                            alt="Capa do álbum 'Apocalipse' Edson Gomes" />
+                    </a>
+                </div>
+                <div class="album-info">
+                    <h3>Apocalipse (1997)</h3>
+                    <p>Equilíbrio entre protesto e romance: Além das fortes críticas sociopolíticas em faixas como "O
+                        País é o Culpado", "Babylon Vampire", "Fogo na Babilônia" e a faixa-título "Apocalipse", Edson
+                        também mostra um lado mais sensível em músicas como "Perdido de Amor", "Amor Sem Compromisso" e
+                        "Me Abrace". Temas profundos e simbólicos: O repertório traz reflexões sobre injustiça, luta
+                        contra o sistema ("Fogo na Babilônia"), exaltação cultural ("Etiópia") e mensagens de esperança
+                        em tempos de crise.</p>
+                </div>
+            </div>
+
+            <!-- Álbum 6: Acorde, Levante, Lute -->
+            <div class="album">
+                <div class="album-image">
+                    <a href="https://open.spotify.com/album/6c9GJ78ThVUZuHEdj5QlCB?si=icESkrwQSk2Z2VZU5T_FRw"
+                        target="_blank">
+                        <img src="https://i.scdn.co/image/ab67616d0000b273f3a3360e94e0002d6efe2063"
+                            alt="Capa do álbum acorde, levante, lute Edson Gomes" />
+                    </a>
+                </div>
+                <div class="album-info">
+                    <h3>Acorde, levante, lute (2002)</h3>
+                    <p>Último álbum de estúdio inédito de Edson Gomes, lançado em 2002. A obra mantém o viés de crítica
+                        social, resistência e orgulho racial. Destaque para as faixas "Acorde, Levante, Lute", "Homens
+                        de Pedra" e "Chumbo Grosso", que se tornaram hinos da militância negra e do reggae nacional.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <!-- Links para redes sociais -->
+        <div class="social-links">
+            <a href="https://www.instagram.com/edsongomesreal/">Instagram</a>
+            <a href="http://www.youtube.com/@EdsonGomes">YouTube</a>
+            <a
+                href="https://open.spotify.com/intl-pt/artist/4kFDUmta3ihdpLBVLh1Vhw?si=rOOSdXgOQxS4udgTCPNkGA">Spotify</a>
+        </div>
+        <p>Desenvolvido por: José Miguel, Michelly Silva e Maria Eduarda</p>
+    </footer>
+</body>
+
+</html>
